@@ -26,5 +26,12 @@ services:
       # Where our data will be persisted
     volumes:
       - my-db:/var/lib/mysql
+  adminer:
+    image: adminer:4.7.6-standalone
+    environment:
+      - ADMINER_DEFAULT_SERVER=db
+    ports:
+      - 8002:8080
+      
 volumes:
   my-db:
